@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "Satrup Ext",
+  "version": "1.0",
+  "description": "Tools untuk integrasi SATRUP dengan SIRUP.",
+  "action": {
+    "default_popup": "excecute.html",
+    "default_icon": {
+      "16": "assets/icon16.png",
+      "48": "assets/icon48.png",
+      "128": "assets/icon128.png"
+    }
+  },
+  "permissions": ["activeTab", "storage"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://satrup-ci4.test/*", "https://sirup.lkpp.go.id/*"],
+      "js": ["content.js"]
+    }
+  ]
+}
